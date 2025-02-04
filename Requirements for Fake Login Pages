@@ -1,0 +1,21 @@
+Credential Harvesting via Fake Login Pages
+Steps to Create:
+1) Set Up Development Environment
+   Install Python and Flask:
+    sudo apt update
+    sudo apt install python3 python3-pip
+    pip3 install flask
+2) Create a Fake Login Page
+   Use Flask to host the fake webpage that mimics a legitimate login page.
+   Write the Code for the Flask Application and save the following script as fake_login.py
+This app:
+Serves a fake login form.
+Captures submitted credentials and saves them in stolen_credentials.txt.
+3) Run the Fake Login Page
+   Start the application:
+   python3 fake_login.py
+4) Access the login page on http://localhost:8080.
+   Deploy the Tool
+   Host it using tools like ngrok to expose it to the internet (for testing):
+   ngrok http 8080
+Use the generated link for phishing campaigns.
