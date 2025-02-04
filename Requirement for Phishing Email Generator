@@ -1,0 +1,15 @@
+1) Set Up Email-Sending Functionality
+   Use Python's smtplib to send phishing emails.
+    Install necessary libraries:
+    pip3 install email
+2) Write the Email Generator Script
+    Save the following script as phishing_email.py
+3) Replace:
+    your_email@example.com and your_password with your email credentials.
+    http://your_ngrok_url_here with the URL of your fake login page.
+4) Test Sending Emails
+    Run the script:
+    python3 phishing_email.py
+5) Avoid Spam Filters
+   Use legitimate-sounding subject lines.
+   Change email content regularly to avoid detection.
